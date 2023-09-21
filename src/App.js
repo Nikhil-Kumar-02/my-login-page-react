@@ -1,3 +1,4 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import HeaderPage from './components/HeaderPage';
 import HomePage from './components/HomePage';
@@ -9,12 +10,14 @@ function App() {
   return (
     <div className="wrapper">
         <HeaderPage></HeaderPage>
-        {/* <div className='homePage'>
-          <HomePage></HomePage>
-        </div> */}
-        {/* <LogInPage></LogInPage> */}
-        <SignUp></SignUp>
+        
+        <Routes>
+          <Route path='/' element={<HomePage></HomePage>}></Route>
+          <Route path='/signin' element={<LogInPage></LogInPage>}></Route>
+          <Route path='/signup' element={<SignUp></SignUp>}></Route>
+        </Routes>
     </div>
+
   );
 }
 

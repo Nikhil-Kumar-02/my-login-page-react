@@ -1,24 +1,32 @@
 import React from "react"
 import myImage from '../images/logo.webp'
+import { useNavigate } from "react-router-dom";
 
 const HeaderPage = (props) => {
-    function clickhandler(e){
-        console.log(e.target);
+
+    const navigate = useNavigate();
+    function loadLoginPage(){
+        navigate("/signin");
     }
+
+    function loadSignUpPage(){
+        navigate("/signup");
+    }
+
   return (
     <div className='header'>
         <div className='companyname'>
-            <img src={myImage} width={20} height={20} alt='company logo' onClick={clickhandler}></img>
-            <div onClick={clickhandler}>StudyNotion</div>
+            <img src={myImage} width={20} height={20} alt='company logo'></img>
+            <div>StudyNotion</div>
         </div>
         <nav className='navigator'>
-            <div onClick={clickhandler}>Home</div>
-            <div onClick={clickhandler}>About</div>
-            <div onClick={clickhandler}>Contact</div>
+            <div>Home</div>
+            <div>About</div>
+            <div>Contact</div>
         </nav>
         <div className='auth'>
-            <button onClick={clickhandler}>Log In</button>
-            <button onClick={clickhandler}>Sign Up</button>
+            <button onClick={loadLoginPage}>Log In</button>
+            <button onClick={loadSignUpPage}>Sign Up</button>
         </div>
     </div>
   )
