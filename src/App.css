@@ -1,0 +1,50 @@
+.wrapper{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: gray;
+}
+
+.header{
+    display: flex;
+    height: 8vh;
+    justify-content: space-between;
+    & * {
+        display: flex;
+        margin: 0.3rem;
+        color: white;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+}
+
+.navigator > *{
+    margin: 0.5rem 1.5rem;
+}
+
+.auth > * {
+    width: 5rem;
+    background-color: rgb(141, 136, 136);
+    border: none;
+    border-radius: 5px;
+}
+
+.auth *{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.HomePageDesign{
+    height: 92vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+}
