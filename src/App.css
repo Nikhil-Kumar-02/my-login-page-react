@@ -49,6 +49,9 @@
     color: white;
 }
 
+
+
+/* below css for log in page */
 .LogInPage{
     height: 92vh;
     width: 100%;
@@ -118,4 +121,110 @@
     color: black;
     font-size: 1.4rem;
     cursor: pointer;
+}
+
+
+/* below css for sign up page */
+
+.signup-wrapper{
+    height: 92vh;
+    /* background-color: pink; */
+    display: flex;
+    justify-content: center ;
+}
+
+.signup-container{
+    display: flex;
+    width: 70vw;
+    /* background-color: gray; */
+    justify-content: space-between;
+}
+
+.signup-form{
+    width: 30vw;
+    /* background-color: yellow; */
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.signup-text{
+    font-weight: 200;
+}
+
+.signup-bluetxt{
+    color: aqua;
+}
+
+.selectUser{
+    background-color: rgb(183, 179, 179);
+    border-radius: 1rem;
+    width: max-content;
+    margin: 0.7rem 0rem;
+}
+
+.selectUser > * {
+    margin: 0.5rem 1rem;
+    background-color: rgb(211, 206, 206);
+    height: 1.8rem;
+    width: 4rem;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.signupPersonalDetails{
+    display: flex;
+    justify-content: space-between;
+    & input{
+        background-color: rgb(211, 206, 206);
+    }
+    
+}
+
+.signup-form {
+    & input , button{
+        height: 1.8rem;
+        border: none;
+        border-radius: 5px;
+    }
+}
+
+.signupEmail {
+    margin: 0.8rem 0;
+    & input{
+        width: 30vw;
+        background-color: rgb(211, 206, 206);
+    }
+}
+
+.signup-password{
+    display: flex;
+    justify-content: space-between;
+    & input{
+        background-color: rgb(211, 206, 206);
+    }
+}
+
+.createAccount{
+    width: 30vw;
+    height: 12vh;
+    margin: 1rem 0;
+    background-color: rgb(202, 202, 31);
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.signup-google >*{ 
+    width: 30vw;
+    cursor: pointer;
+    font-weight: 700;
+    color: white;
+    background-color: rgb(101, 91, 91);
+    position: relative;
+}
+
+.signup-google-logo{
+    position: absolute;
+    left: 7rem;
 }
