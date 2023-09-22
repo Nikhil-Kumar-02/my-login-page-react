@@ -26,12 +26,12 @@ const LogInPage = (props) => {
             </div>
             <br></br>
             <div>
-                <button className="signInButton">Sign In</button>
+                <button onClick={props.fun} className="signInButton">Sign In</button>
             </div>
             <br></br>
             <br></br>
             <div>
-                <button><FcGoogle className="googleLogo"></FcGoogle>Sign In With Google</button>
+                <button onClick={props.fun}><FcGoogle className="googleLogo"></FcGoogle>Sign In With Google</button>
             </div>
         </form>
         <img src={teaching} alt="the teacher is teaching" width={400} height={300} className="teachingImage"></img>

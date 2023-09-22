@@ -260,3 +260,14 @@ button:hover{
         color: black;
     }
 }
+
+.dashboard-wrapper{
+    height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    font-family: cursive;
+    color: cornsilk;
+}

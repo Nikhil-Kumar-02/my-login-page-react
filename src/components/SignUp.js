@@ -3,7 +3,9 @@ import teaching from '../images/teaching.jpg'
 import { FcGoogle } from 'react-icons/fc';
 import { AiFillEyeInvisible } from 'react-icons/ai';
 
+
 const SignUp = (props) => {
+
   return (
     <div className="signup-wrapper">
       <div className="signup-container">
@@ -50,9 +52,9 @@ const SignUp = (props) => {
                     <input placeholder="Confirm Password" id="cnfPassword" type="password"></input>
                 </div>
             </div>
-            <button className="createAccount">Create Account</button>
+            <button className="createAccount" onClick={props.fun}>Create Account</button>
             <div className="signup-google">
-                <button><FcGoogle className="signup-google-logo"></FcGoogle>Sign in with Google</button>
+                <button onClick={props.fun}><FcGoogle className="signup-google-logo"></FcGoogle>Sign in with Google</button>
             </div>
         </form>
         <img src={teaching} alt="the teacher is teaching" width={400} height={300} className="teachingImage"></img>
