@@ -96,6 +96,7 @@
 .signInButton{
     background-color: rgb(244, 244, 4);
     color: rgb(87, 85, 85);
+    cursor: pointer;
 }
 
 .forgotPassword{
@@ -103,6 +104,10 @@
     font-size: 0.7rem;
     margin-left: 14rem;
     cursor: pointer;
+}
+
+.forgotPassword:hover{
+    text-decoration: underline;
 }
 
 .googleLogo{
@@ -123,6 +128,9 @@
     cursor: pointer;
 }
 
+button:hover{
+    cursor: pointer;
+}
 
 /* below css for sign up page */
 
@@ -227,4 +235,28 @@
 .signup-google-logo{
     position: absolute;
     left: 7rem;
+}
+
+.crePassword{
+    position: relative;
+    & .signupEyeLogo {
+        position: absolute;
+        font-size: 1.5rem;
+        left: 8.5rem;
+        top: 1.3rem;
+        cursor: pointer;
+        color: black;
+    }
+}
+
+.cnfPassword{
+    position: relative;
+    & .signupEyeLogo {
+        position: absolute;
+        font-size: 1.5rem;
+        left: 8.5rem;
+        top: 1.3rem;
+        cursor: pointer;
+        color: black;
+    }
 }

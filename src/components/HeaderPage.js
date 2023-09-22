@@ -1,6 +1,6 @@
 import React from "react"
 import myImage from '../images/logo.webp'
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const HeaderPage = (props) => {
 
@@ -20,7 +20,7 @@ const HeaderPage = (props) => {
             <div>StudyNotion</div>
         </div>
         <nav className='navigator'>
-            <div>Home</div>
+            <NavLink to="/">Home</NavLink>
             <div>About</div>
             <div>Contact</div>
         </nav>

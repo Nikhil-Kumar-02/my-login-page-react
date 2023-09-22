@@ -39,12 +39,14 @@ const SignUp = (props) => {
                 <div className="crePassword">
                     <label htmlFor="crePassword">Create Password</label>
                     <br></br>
+                    <AiFillEyeInvisible className="signupEyeLogo"></AiFillEyeInvisible>
                     <input placeholder="Create Password" id="crePassword" type="password"></input>
 
                 </div>
                 <div className="cnfPassword">
                     <label htmlFor="cnfPassword">Confirm Password</label>
                     <br></br>
+                    <AiFillEyeInvisible className="signupEyeLogo"></AiFillEyeInvisible>
                     <input placeholder="Confirm Password" id="cnfPassword" type="password"></input>
                 </div>
             </div>
