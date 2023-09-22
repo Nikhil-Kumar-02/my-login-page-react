@@ -165,7 +165,7 @@ button:hover{
 }
 
 .selectUser{
-    background-color: rgb(183, 179, 179);
+    background-color: rgb(81, 79, 79);
     border-radius: 1rem;
     width: max-content;
     margin: 0.7rem 0rem;
@@ -173,13 +173,14 @@ button:hover{
 
 .selectUser > * {
     margin: 0.5rem 1rem;
-    background-color: rgb(211, 206, 206);
+    background-color: rgb(81, 79, 79);
     height: 1.8rem;
     width: 4rem;
     border: none;
     border-radius: 15px;
     cursor: pointer;
 }
+
 
 .signupPersonalDetails{
     display: flex;
@@ -271,3 +272,4 @@ button:hover{
     font-family: cursive;
     color: cornsilk;
 }
+

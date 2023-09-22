@@ -4,6 +4,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { AiFillEyeInvisible } from 'react-icons/ai';
 
 const LogInPage = (props) => {
+  
   return (
     <div className="LogInPage">
       <div>
@@ -14,7 +15,7 @@ const LogInPage = (props) => {
             <div>
                 <label htmlFor="email">Email Address</label>
                 <br></br>
-                <input type="email" id="email" placeholder="Enter email address"></input>
+                <input required type="email" id="email" placeholder="Enter email address"></input>
             </div>
             <br></br>
             <div className="password">

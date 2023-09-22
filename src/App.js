@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 function App() {
   const navigate = useNavigate();
     function clickHandler() {
-        navigate("/dashboard");
+      navigate("/dashboard");
     }
 
   return (
@@ -23,6 +23,7 @@ function App() {
           <Route path='/signin' element={<LogInPage fun={clickHandler}></LogInPage>}></Route>
           <Route path='/signup' element={<SignUp fun={clickHandler}></SignUp>}></Route>
         </Routes>
+
     </div>
 
   );

@@ -6,6 +6,20 @@ import { AiFillEyeInvisible } from 'react-icons/ai';
 
 const SignUp = (props) => {
 
+    function currentUserRole(e){
+        e.preventDefault();
+        let ele = e.target.parentElement;
+        ele = ele.children;
+        if(e.target == ele[0]){
+            ele[0].style.backgroundColor = "rgb(188, 188, 188)";
+            ele[1].style.backgroundColor = "rgb(81, 79, 79)"
+        }
+        else{
+            ele[1].style.backgroundColor = "rgb(188, 188, 188)";
+            ele[0].style.backgroundColor = "rgb(81, 79, 79)"
+        }
+    }
+
   return (
     <div className="signup-wrapper">
       <div className="signup-container">
@@ -17,8 +31,8 @@ const SignUp = (props) => {
                 <span className="signup-bluetxt">Education to future proof your career</span>
             </div>
             <div className="selectUser">
-                <button>Student</button>
-                <button>Instructor</button>
+                <button onClick={currentUserRole}>Student</button>
+                <button onClick={currentUserRole}>Instructor</button>
             </div>
             <div className="signupPersonalDetails">
                 <div className="signupfName">
