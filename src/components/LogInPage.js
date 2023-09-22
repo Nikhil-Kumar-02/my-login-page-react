@@ -1,11 +1,12 @@
 import React, { useState } from "react"
 import teaching from '../images/teaching.jpg'
-import { FcCdLogo, FcGoogle } from 'react-icons/fc';
-import { AiFillEyeInvisible } from 'react-icons/ai';
+import { FcGoogle } from 'react-icons/fc';
+import { AiFillEyeInvisible , AiFillEye} from 'react-icons/ai';
 
 const LogInPage = (props) => {
 
-const [loginData , setLoginData] = useState({Email : "" , Password : ""})
+const [loginData , setLoginData] = useState({Email : "" , Password : ""});
+const [showPassword , setShowPassword] = useState(false);
 
 function changeHandler(e){
   setLoginData( (prevData) => ({
@@ -13,10 +14,22 @@ function changeHandler(e){
   }))
 }
 
+function PasswordHandler(e){
+  // console.log(e.target.parentElement.children[1]);
+  // console.log(e.target.parentElement);
+  setShowPassword(!showPassword);
+  const tar = document.querySelector('#password');
+  // console.log(tar);
+  if(!showPassword){
+    tar.type = "text"
+  }
+  else{
+    tar.type = "password"
+  }
+}
+
 function submitHandler(e){
-  //console.log(loginData);
   e.preventDefault();
-  console.log("print")
   console.log(loginData);
   props.fun();
 }
@@ -37,7 +50,13 @@ function submitHandler(e){
             <div className="password">
                 <label htmlFor="password">Enter Password</label>
                 <input type="password" id="password" placeholder="Enter Password" name="Password" onChange={changeHandler} value={loginData.Password}></input>
-                <AiFillEyeInvisible className="eyeLogo"></AiFillEyeInvisible>
+                {
+                  !showPassword ? (
+                    <AiFillEyeInvisible className="eyeLogo" onClick={PasswordHandler}></AiFillEyeInvisible>
+                    ) : (
+                    <AiFillEye className="eyeLogo" onClick={PasswordHandler}></AiFillEye>
+                  )
+                }
                 <span className="forgotPassword">Forgot Password ?</span>
             </div>
             <br></br>

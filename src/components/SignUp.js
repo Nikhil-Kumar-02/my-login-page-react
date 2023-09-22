@@ -1,14 +1,15 @@
 import React, { useState } from "react"
 import teaching from '../images/teaching.jpg'
 import { FcGoogle } from 'react-icons/fc';
-import { AiFillEyeInvisible } from 'react-icons/ai';
+import { AiFillEyeInvisible , AiFillEye } from 'react-icons/ai';
 
 
 const SignUp = (props) => {
 
+    const [newUserData , setnewUserData] = useState({UserType : "" ,FirstName : "" , LastName : "" , Email : "" , CreatePassword : "" ,ConfirmPassword : ""});
 
-    const [newUserData , setnewUserData] = useState({UserType : "" ,FirstName : "" , LastName : "" , Email : "" , CreatePassword : "" ,
-    ConfirmPassword : ""});
+    const [creshowPassword , setcreShowPassword] = useState(false);
+    const [cnfshowPassword , setcnfShowPassword] = useState(false);
 
     function currentUserRole(e){
         e.preventDefault();
@@ -29,13 +30,39 @@ const SignUp = (props) => {
     function submitHandler(e){
         e.preventDefault();
         console.log(newUserData);
-        props.fun();
+        if(newUserData.CreatePassword !== newUserData.ConfirmPassword){
+            alert("password not matching")
+        }
+        else
+            props.fun();
     }
 
     function changeHandler(e){
         setnewUserData( (prevData) => ({
             ...prevData , [e.target.name] : e.target.value
         }))
+    }
+
+    function crePasswordHandler(e){
+        setcreShowPassword(!creshowPassword);
+        const tar = document.querySelector('#crePassword');
+        if(!creshowPassword){
+          tar.type = "text"
+        }
+        else{
+          tar.type = "password"
+        }
+    }
+
+    function cnfPasswordHandler(e){
+        setcnfShowPassword(!cnfshowPassword);
+        const tar = document.querySelector('#cnfPassword');
+        if(!cnfshowPassword){
+          tar.type = "text"
+        }
+        else{
+          tar.type = "password"
+        }
     }
 
   return (
@@ -73,14 +100,28 @@ const SignUp = (props) => {
                 <div className="crePassword">
                     <label htmlFor="crePassword">Create Password</label>
                     <br></br>
-                    <AiFillEyeInvisible className="signupEyeLogo"></AiFillEyeInvisible>
+                    {
+                        !creshowPassword ? (
+                            <AiFillEyeInvisible className="signupEyeLogo" onClick={crePasswordHandler}></AiFillEyeInvisible>
+                            ) : (
+                            <AiFillEye className="signupEyeLogo" onClick={crePasswordHandler}></AiFillEye>
+                        )
+                    }
+                    {/* <AiFillEyeInvisible className="signupEyeLogo"></AiFillEyeInvisible> */}
                     <input placeholder="Create Password" id="crePassword" type="password" name="CreatePassword" onChange={changeHandler}value={newUserData.CreatePassword}></input>
 
                 </div>
                 <div className="cnfPassword">
                     <label htmlFor="cnfPassword">Confirm Password</label>
                     <br></br>
-                    <AiFillEyeInvisible className="signupEyeLogo"></AiFillEyeInvisible>
+                    {
+                        !cnfshowPassword ? (
+                            <AiFillEyeInvisible className="signupEyeLogo" onClick={cnfPasswordHandler}></AiFillEyeInvisible>
+                            ) : (
+                            <AiFillEye className="signupEyeLogo" onClick={cnfPasswordHandler}></AiFillEye>
+                        )
+                    }
+                    {/* <AiFillEyeInvisible className="signupEyeLogo"></AiFillEyeInvisible> */}
                     <input placeholder="Confirm Password" id="cnfPassword" type="password" name="ConfirmPassword" onChange={changeHandler}value={newUserData.ConfirmPassword}></input>
                 </div>
             </div>
