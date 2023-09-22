@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import teaching from '../images/teaching.jpg'
-import { FcGoogle } from 'react-icons/fc';
+import { FcCdLogo, FcGoogle } from 'react-icons/fc';
 import { AiFillEyeInvisible } from 'react-icons/ai';
 
 const LogInPage = (props) => {
@@ -12,13 +12,19 @@ function changeHandler(e){
     ...prevData , [e.target.name] : e.target.value
   }))
 }
-  console.log(loginData);
 
+function submitHandler(e){
+  //console.log(loginData);
+  e.preventDefault();
+  console.log("print")
+  console.log(loginData);
+  props.fun();
+}
 
   return (
     <div className="LogInPage">
       <div>
-        <form className="signInform">
+        <form className="signInform" onSubmit={submitHandler}>
             <h1>Welcome Back</h1>
             <div>Build skills for today / tomorrow and beyond </div>
             <div className="signBluetxt">Education to future proof your career</div>
@@ -36,12 +42,12 @@ function changeHandler(e){
             </div>
             <br></br>
             <div>
-                <button type="submit"   onClick={props.fun} className="signInButton">Sign In</button>
+                <button type="submit" className="signInButton">Sign In</button>
             </div>
             <br></br>
             <br></br>
             <div>
-                <button type="submit" onClick={props.fun}><FcGoogle className="googleLogo"></FcGoogle>Sign In With Google</button>
+                <button type="submit" ><FcGoogle className="googleLogo"></FcGoogle>Sign In With Google</button>
             </div>
         </form>
         <img src={teaching} alt="the teacher is teaching" width={400} height={300} className="teachingImage"></img>

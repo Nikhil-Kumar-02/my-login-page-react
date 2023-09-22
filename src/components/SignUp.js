@@ -26,8 +26,11 @@ const SignUp = (props) => {
             ...prev , UserType : e.target.name
         }))
     }
-
-    console.log(newUserData);
+    function submitHandler(e){
+        e.preventDefault();
+        console.log(newUserData);
+        props.fun();
+    }
 
     function changeHandler(e){
         setnewUserData( (prevData) => ({
@@ -38,7 +41,7 @@ const SignUp = (props) => {
   return (
     <div className="signup-wrapper">
       <div className="signup-container">
-      <form className="signup-form">
+      <form className="signup-form" onSubmit={submitHandler}>
             <div className="signup-text">
                 <h1>Join the millions learning to code with StudyNotion for free</h1>
                 <span>Build skills for today / tomorrow and beyond</span>
@@ -81,9 +84,9 @@ const SignUp = (props) => {
                     <input placeholder="Confirm Password" id="cnfPassword" type="password" name="ConfirmPassword" onChange={changeHandler}value={newUserData.ConfirmPassword}></input>
                 </div>
             </div>
-            <button className="createAccount" onClick={props.fun}>Create Account</button>
+            <button className="createAccount" >Create Account</button>
             <div className="signup-google">
-                <button onClick={props.fun}><FcGoogle className="signup-google-logo"></FcGoogle>Sign in with Google</button>
+                <button><FcGoogle className="signup-google-logo"></FcGoogle>Sign in with Google</button>
             </div>
         </form>
         <img src={teaching} alt="the teacher is teaching" width={400} height={300} className="teachingImage"></img>
